@@ -2,7 +2,10 @@ package ait.elevator.task;
 
 import ait.elevator.model.Elevator;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class ElevatorAppl {
+
 
     private static final int N_TRUCK=10000;
     private static final int N_RACES= 10;
