@@ -16,8 +16,9 @@ public class Truck implements Runnable{
     @Override
     public void run() {
         for (int i = 0; i <nRace ; i++) {
-            elevator.add(capacity);
-
+            synchronized ("mutex") {
+                elevator.add(capacity);
+            }
         }
     }
 
