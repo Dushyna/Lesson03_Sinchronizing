@@ -10,10 +10,11 @@ public class ElevatorAppl {
 
 
     public static void main(String[] args) throws InterruptedException {
-        Elevator elevator = new Elevator("V.I. Lenin");
+        Elevator elevator1 = new Elevator("V.I. Lenin");
+        Elevator elevator2 = new Elevator("Ukraina");
         Truck[] trucks=new Truck[N_TRUCK];
         for (int i = 0; i < trucks.length; i++) {
-            trucks[i]= new Truck(N_RACES,CAPACITY, elevator);
+            trucks[i]= new Truck(N_RACES,CAPACITY, elevator1, elevator2);
 
         }
         Thread[] threads = new Thread[trucks.length];
@@ -25,7 +26,8 @@ public class ElevatorAppl {
         for(Thread thread :  threads){
             thread.join();
         }
-        System.out.println("CurrentVolume  " + elevator.getCurrentVolume());
+        System.out.println("CurrentVolume  elevator1 " + elevator1.getCurrentVolume());
+        System.out.println("CurrentVolume  elevator2 " + elevator2.getCurrentVolume());
 
     }
 }

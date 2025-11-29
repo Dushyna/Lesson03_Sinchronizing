@@ -5,18 +5,21 @@ import ait.elevator.model.Elevator;
 public class Truck implements Runnable{
     private  int nRace;
     private int capacity;
-    private Elevator elevator;
+    private Elevator elevator1;
+    private Elevator elevator2;
 
-    public Truck(int nRace, int capacity, Elevator elevator) {
+    public Truck(int nRace, int capacity, Elevator elevator1, Elevator elevator2) {
         this.nRace = nRace;
         this.capacity = capacity;
-        this.elevator = elevator;
+        this.elevator1 = elevator1;
+        this.elevator2 = elevator2;
     }
 
     @Override
     public void run() {
         for (int i = 0; i <nRace ; i++) {
-            elevator.add(capacity);
+            elevator1.add(capacity/2);
+            elevator2.add(capacity/2);
 
         }
     }
